@@ -13,7 +13,7 @@ class islive():
         link=(f"https://www.youtube.com/channel/{chid}/live")
         
         try:
-            r = requests.get(link)
+            r = requests.get(link, cookies={'CONSENT': 'YES+1'})
             if  re.search(r'"isLive":true', r.text) is None:
                 data=[{"link":link,"status":"NONE","title":"NONE","picture":"NONE","timestamp":"NONE"}] 
                 return(data)
@@ -66,7 +66,7 @@ class islive():
         link=f"{chid}/live"
         
         try:
-            r = requests.get(link)
+            r = requests.get(link, cookies={'CONSENT': 'YES+1'})
             if  re.search(r'"isLive":true', r.text) is None:                
                 data=[{"link":link,"status":"NONE","title":"NONE","picture":"NONE","timestamp":"NONE"}]
                 return(data)
@@ -164,7 +164,7 @@ class islive():
          }
 
         try:
-            r = requests.get(link,proxies=proxies)
+            r = requests.get(link,proxies=proxies, cookies={'CONSENT': 'YES+1'})
             if  re.search(r'"isLive":true', r.text) is None:                
                 data=[{"link":link,"status":"NONE","title":"NONE","picture":"NONE","timestamp":"NONE"}]
                 return(data)
@@ -217,7 +217,7 @@ class islive():
          }
 
         try:
-            r = requests.get(link,proxies=proxies)
+            r = requests.get(link,proxies=proxies, cookies={'CONSENT': 'YES+1'})
             if  re.search(r'"isLive":true', r.text) is None:                
                 data=[{"link":link,"status":"NONE","title":"NONE","picture":"NONE","timestamp":"NONE"}]
                 return(data)
